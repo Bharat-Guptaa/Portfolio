@@ -123,8 +123,18 @@
     font-size: 1.8rem;
     font-weight: 400;
     color: var(--text-secondary);
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     animation: fadeIn 1.5s ease-out;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 30px;
+    animation: fadeIn 1.8s ease-out;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .hero-cta {
@@ -175,6 +185,27 @@
     transform: translateY(-3px);
   }
   
+  .cta-button.download {
+    background: linear-gradient(90deg, #34b05c, #41d3bd);
+    color: white;
+    box-shadow: 0 5px 15px rgba(52, 176, 92, 0.4);
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .cta-button.download:hover {
+    background: linear-gradient(90deg, #3cc268, #4de8d0);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(52, 176, 92, 0.6);
+  }
+  
+  .cta-button.download i {
+    font-size: 0.9rem;
+  }
+  
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -208,6 +239,35 @@
     color: var(--text-secondary);
     max-width: 800px;
     line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  
+  .contact-details {
+    margin: 30px 0;
+  }
+  
+  .contact-details p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .contact-details i {
+    color: var(--accent-color);
+    width: 20px;
+    text-align: center;
+  }
+  
+  .contact-details a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-details a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
   }
   
   .about-stats {
@@ -251,6 +311,31 @@
     background-color: var(--darker-bg);
     border-radius: var(--border-radius);
     padding: 60px 40px;
+  }
+  
+  .skills-category {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    background: rgba(110, 86, 207, 0.05);
+    border: 1px solid rgba(110, 86, 207, 0.1);
+    transition: all 0.3s cubic-bezier(0.2, 0, 0.1, 1);
+  }
+  
+  .skills-category:hover {
+    background: rgba(110, 86, 207, 0.1);
+    transform: translateY(-5px);
+  }
+  
+  .skills-category h3 {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+  }
+  
+  .skills-category p {
+    color: var(--text-secondary);
+    line-height: 1.7;
   }
   
   .skills-list {
@@ -386,6 +471,131 @@
     transform: translateX(5px);
   }
   
+  /* Experience Section */
+  #experience {
+    background-color: var(--dark-bg);
+    padding: 60px 40px;
+    border-radius: var(--border-radius);
+  }
+  
+  .experience-item {
+    margin-bottom: 40px;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    background: rgba(110, 86, 207, 0.05);
+    border: 1px solid rgba(110, 86, 207, 0.1);
+    transition: all 0.3s cubic-bezier(0.2, 0, 0.1, 1);
+  }
+  
+  .experience-item:hover {
+    background: rgba(110, 86, 207, 0.1);
+    transform: translateY(-5px);
+  }
+  
+  .experience-header {
+    margin-bottom: 20px;
+  }
+  
+  .experience-header h3 {
+    color: var(--text-primary);
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+  }
+  
+  .experience-title {
+    color: var(--accent-color);
+    font-weight: 500;
+  }
+  
+  .experience-content h4 {
+    color: var(--text-primary);
+    margin: 20px 0 10px;
+    font-size: 1.1rem;
+  }
+  
+  .experience-content p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  
+  .education-certifications {
+    margin-top: 50px;
+  }
+  
+  .education-certifications h3 {
+    color: var(--accent-color);
+    margin: 30px 0 15px;
+    font-size: 1.3rem;
+  }
+  
+  .education-certifications ul {
+    list-style: none;
+  }
+  
+  .education-certifications li {
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+  }
+  
+  .education-certifications li:before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+  }
+
+  /* Certificates Section */
+  #certificates {
+    background-color: var(--darker-bg);
+    padding: 60px 40px;
+    border-radius: var(--border-radius);
+    position: relative;
+  }
+  
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .cert-item {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    background: rgba(110, 86, 207, 0.05);
+    border: 1px solid rgba(110, 86, 207, 0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cert-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .cert-item img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+    transition: all 0.3s ease;
+  }
+  
+  .cert-name {
+    padding: 15px 0;
+    text-align: center;
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+  
   /* Contact Section */
   #contact {
     background-color: var(--darker-bg);
@@ -492,8 +702,20 @@
       flex-direction: column;
     }
     
+    .cert-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
     #hero h1 {
       font-size: 3.5rem;
+    }
+    
+    #hero h2 {
+      font-size: 1.5rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1rem;
     }
     
     .profile-image {
@@ -534,6 +756,14 @@
     .social-links {
       gap: 15px;
     }
+    
+    .experience-item {
+      padding: 20px;
+    }
+    
+    .skills-category {
+      padding: 15px;
+    }
   }
   
   @media (max-width: 600px) {
@@ -552,6 +782,10 @@
     
     #hero h2 {
       font-size: 1.3rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 0.9rem;
     }
     
     h2 {
@@ -574,6 +808,31 @@
     
     .project-card {
       padding: 20px;
+    }
+    
+    .contact-details p {
+      font-size: 0.9rem;
+    }
+    
+    .experience-item {
+      padding: 15px;
+    }
+    
+    .experience-header h3 {
+      font-size: 1.2rem;
+    }
+    
+    .experience-title {
+      font-size: 0.9rem;
+    }
+    
+    .skills-category h3, 
+    .education-certifications h3 {
+      font-size: 1.1rem;
+    }
+    
+    .cert-grid {
+      grid-template-columns: 1fr;
     }
   }
   
