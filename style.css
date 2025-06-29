@@ -139,10 +139,15 @@
   
   .hero-cta {
     display: flex;
-    gap: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
     justify-content: center;
+    align-items: center;
     margin-top: 30px;
     animation: fadeIn 2s ease-out;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .cta-button {
@@ -155,6 +160,8 @@
     display: inline-block;
     box-shadow: 0 4px 15px rgba(110, 86, 207, 0.2);
     will-change: transform, box-shadow;
+    text-align: center;
+    min-width: 160px;
   }
   
   .cta-button:hover {
@@ -189,11 +196,11 @@
     background: linear-gradient(90deg, #34b05c, #41d3bd);
     color: white;
     box-shadow: 0 5px 15px rgba(52, 176, 92, 0.4);
-    margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
+    text-align: center;
   }
   
   .cta-button.download:hover {
@@ -211,28 +218,16 @@
     to { opacity: 1; transform: translateY(0); }
   }
   
-  /* About Me Section */
+  /* Executive Summary Section */
   #about {
-    background-color: var(--dark-bg);
+    background-color: var(--darker-bg);
     border-radius: var(--border-radius);
     padding: 40px;
     position: relative;
-    z-index: 1;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   }
   
-  #about::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: var(--border-radius);
-    padding: 2px;
-    background: linear-gradient(to right, var(--gradient-1), var(--gradient-2));
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    z-index: -1;
-  }
+  /* Border removed from executive summary section */
   
   #about p {
     font-size: 1.1rem;
@@ -262,12 +257,28 @@
   .contact-details a {
     color: var(--accent-color);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 2px;
   }
   
   .contact-details a:hover {
     color: var(--accent-hover);
-    text-decoration: underline;
+  }
+  
+  .contact-details a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-hover);
+    transition: width 0.3s ease;
+  }
+  
+  .contact-details a:hover::after {
+    width: 100%;
   }
   
   .about-stats {
@@ -728,16 +739,9 @@
     }
   
     .hero-cta {
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
       opacity: 1 !important;
       transform: none !important;
-    }
-    
-    .cta-button {
-      width: 80%;
-      text-align: center;
+      justify-content: center;
     }
     
     .about-stats {
@@ -786,6 +790,10 @@
     
     .hero-subtitle {
       font-size: 0.9rem;
+    }
+    
+    .cta-button {
+      min-width: 140px;
     }
     
     h2 {

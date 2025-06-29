@@ -158,12 +158,3 @@ window.addEventListener('scroll', () => {
         scrollToTopBtn.classList.remove('visible');
     }
 });
-// Add a smooth scroll effect to the button
-
-scrollToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
