@@ -11,10 +11,10 @@
     --card-bg: #141417;
     --text-primary: #ffffff;
     --text-secondary: #b4b4bb;
-    --accent-color: #6e56cf;
-    --accent-hover: #7c66dd;
-    --gradient-1: #6e56cf;
-    --gradient-2: #f16cfa;
+    --accent-color: #5056cf;
+    --accent-hover: #6366dd;
+    --gradient-1: #4056cf;
+    --gradient-2: #6c56fa;
     --border-radius: 12px;
   }
   
@@ -99,14 +99,14 @@
     object-fit: cover;
     border: 4px solid var(--accent-color);
     margin-bottom: 30px;
-    box-shadow: 0 0 30px rgba(110, 86, 207, 0.4);
+    box-shadow: 0 0 30px rgba(80, 86, 207, 0.4);
     transition: all 0.5s ease;
     animation: float 6s ease-in-out infinite;
   }
   
   .profile-image:hover {
     transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 10px 40px rgba(110, 86, 207, 0.6);
+    box-shadow: 0 10px 40px rgba(80, 86, 207, 0.6);
   }
   
   #hero h1 {
@@ -158,7 +158,7 @@
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.2, 0, 0.1, 1);
     display: inline-block;
-    box-shadow: 0 4px 15px rgba(110, 86, 207, 0.2);
+    box-shadow: 0 4px 15px rgba(80, 86, 207, 0.2);
     will-change: transform, box-shadow;
     text-align: center;
     min-width: 160px;
@@ -166,18 +166,18 @@
   
   .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(110, 86, 207, 0.3);
+    box-shadow: 0 8px 25px rgba(80, 86, 207, 0.3);
   }
   
   .cta-button:first-child {
     background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2));
     color: white;
-    box-shadow: 0 5px 15px rgba(110, 86, 207, 0.4);
+    box-shadow: 0 5px 15px rgba(80, 86, 207, 0.4);
   }
   
   .cta-button:first-child:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(110, 86, 207, 0.6);
+    box-shadow: 0 10px 25px rgba(80, 86, 207, 0.6);
   }
   
   .cta-button.secondary {
@@ -193,9 +193,9 @@
   }
   
   .cta-button.download {
-    background: linear-gradient(90deg, #34b05c, #41d3bd);
+    background: linear-gradient(90deg, #3468b0, #4181d3);
     color: white;
-    box-shadow: 0 5px 15px rgba(52, 176, 92, 0.4);
+    box-shadow: 0 5px 15px rgba(52, 104, 176, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -204,9 +204,9 @@
   }
   
   .cta-button.download:hover {
-    background: linear-gradient(90deg, #3cc268, #4de8d0);
+    background: linear-gradient(90deg, #3c74c2, #4d8be8);
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(52, 176, 92, 0.6);
+    box-shadow: 0 10px 25px rgba(52, 104, 176, 0.6);
   }
   
   .cta-button.download i {
@@ -295,17 +295,17 @@
     flex: 1;
     min-width: 150px;
     border-radius: var(--border-radius);
-    background: rgba(110, 86, 207, 0.05);
-    border: 1px solid rgba(110, 86, 207, 0.1);
+    background: rgba(80, 86, 207, 0.05);
+    border: 1px solid rgba(80, 86, 207, 0.1);
     transition: all 0.3s cubic-bezier(0.2, 0, 0.1, 1);
-    box-shadow: 0 4px 15px rgba(110, 86, 207, 0.1);
+    box-shadow: 0 4px 15px rgba(80, 86, 207, 0.1);
     will-change: transform, box-shadow;
   }
   
   .stat:hover {
     transform: translateY(-5px);
-    background: rgba(110, 86, 207, 0.1);
-    box-shadow: 0 8px 25px rgba(110, 86, 207, 0.2);
+    background: rgba(80, 86, 207, 0.1);
+    box-shadow: 0 8px 25px rgba(80, 86, 207, 0.2);
   }
   
   .stat-number {
@@ -328,13 +328,13 @@
     margin-bottom: 30px;
     padding: 20px;
     border-radius: var(--border-radius);
-    background: rgba(110, 86, 207, 0.05);
-    border: 1px solid rgba(110, 86, 207, 0.1);
+    background: rgba(80, 86, 207, 0.05);
+    border: 1px solid rgba(80, 86, 207, 0.1);
     transition: all 0.3s cubic-bezier(0.2, 0, 0.1, 1);
   }
   
   .skills-category:hover {
-    background: rgba(110, 86, 207, 0.1);
+    background: rgba(80, 86, 207, 0.1);
     transform: translateY(-5px);
   }
   
@@ -358,11 +358,11 @@
   }
   
   .skills-list li {
-    background: rgba(110, 86, 207, 0.1);
+    background: rgba(80, 86, 207, 0.1);
     color: var(--text-primary);
     padding: 15px 25px;
     border-radius: 30px;
-    border: 1px solid rgba(110, 86, 207, 0.3);
+    border: 1px solid rgba(80, 86, 207, 0.3);
     transition: all 0.3s ease;
     backdrop-filter: blur(5px);
   }
@@ -434,13 +434,13 @@
   
   .project-tag {
     display: inline-block;
-    background: rgba(110, 86, 207, 0.1);
+    background: rgba(80, 86, 207, 0.1);
     color: var(--accent-color);
     padding: 5px 15px;
     border-radius: 20px;
     font-size: 0.8rem;
     margin-bottom: 15px;
-    border: 1px solid rgba(110, 86, 207, 0.2);
+    border: 1px solid rgba(80, 86, 207, 0.2);
   }
   
   .project-tech {
@@ -493,13 +493,13 @@
     margin-bottom: 40px;
     padding: 30px;
     border-radius: var(--border-radius);
-    background: rgba(110, 86, 207, 0.05);
-    border: 1px solid rgba(110, 86, 207, 0.1);
+    background: rgba(80, 86, 207, 0.05);
+    border: 1px solid rgba(80, 86, 207, 0.1);
     transition: all 0.3s cubic-bezier(0.2, 0, 0.1, 1);
   }
   
   .experience-item:hover {
-    background: rgba(110, 86, 207, 0.1);
+    background: rgba(80, 86, 207, 0.1);
     transform: translateY(-5px);
   }
   
@@ -579,8 +579,8 @@
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: all 0.3s ease;
-    background: rgba(110, 86, 207, 0.05);
-    border: 1px solid rgba(110, 86, 207, 0.1);
+    background: rgba(80, 86, 207, 0.05);
+    border: 1px solid rgba(80, 86, 207, 0.1);
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -662,12 +662,12 @@
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(110, 86, 207, 0.3);
+    box-shadow: 0 5px 15px rgba(80, 86, 207, 0.3);
   }
   
   .submit-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(110, 86, 207, 0.5);
+    box-shadow: 0 8px 20px rgba(80, 86, 207, 0.5);
   }
   
   .social-links {
@@ -695,7 +695,7 @@
     transform: translateY(-5px);
     color: var(--text-primary);
     background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2));
-    box-shadow: 0 10px 20px rgba(110, 86, 207, 0.3);
+    box-shadow: 0 10px 20px rgba(80, 86, 207, 0.3);
   }
   
   /* Footer */
@@ -851,11 +851,11 @@ body.light-mode {
     --card-bg: #ffffff;
     --text-primary: #1a1a1a;
     --text-secondary: #4a4a4a;
-    --accent-color: #6e56cf;
-    --accent-hover: #7c66dd;
-    --gradient-1: #6e56cf;
-    --gradient-2: #f16cfa;
-    --button-shadow: rgba(110, 86, 207, 0.15);
+    --accent-color: #5056cf;
+    --accent-hover: #6366dd;
+    --gradient-1: #4056cf;
+    --gradient-2: #6c56fa;
+    --button-shadow: rgba(80, 86, 207, 0.15);
     --shadow-sm: rgba(0, 0, 0, 0.05) 0px 1px 2px, rgba(0, 0, 0, 0.1) 0px 1px 3px;
     --shadow-md: rgba(17, 12, 46, 0.08) 0px 8px 20px;
     --shadow-lg: rgba(17, 12, 46, 0.15) 0px 15px 40px;
@@ -864,12 +864,12 @@ body.light-mode {
 /* Enhanced button styles for light mode */
 body.light-mode .cta-button {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 20px rgba(110, 86, 207, 0.1);
+    box-shadow: 0 4px 20px rgba(80, 86, 207, 0.1);
 }
 
 body.light-mode .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(110, 86, 207, 0.2);
+    box-shadow: 0 8px 30px rgba(80, 86, 207, 0.2);
 }
 
 body.light-mode .cta-button:first-child {
@@ -887,7 +887,7 @@ body.light-mode .cta-button.secondary {
 }
 
 body.light-mode .cta-button.secondary:hover {
-    background: rgba(110, 86, 207, 0.05);
+    background: rgba(80, 86, 207, 0.05);
     transform: translateY(-3px);
     box-shadow: var(--shadow-md);
 }
@@ -917,7 +917,7 @@ body.light-mode #contact:hover {
 body.light-mode .form-group input,
 body.light-mode .form-group textarea {
     background: #ffffff;
-    border: 1px solid rgba(110, 86, 207, 0.1);
+    border: 1px solid rgba(80, 86, 207, 0.1);
     box-shadow: var(--shadow-sm);
     transition: all 0.3s ease;
 }
@@ -925,7 +925,7 @@ body.light-mode .form-group textarea {
 body.light-mode .form-group input:focus,
 body.light-mode .form-group textarea:focus {
     border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(110, 86, 207, 0.1);
+    box-shadow: 0 0 0 3px rgba(80, 86, 207, 0.1);
 }
 
 /* Enhanced submit button for light mode */
@@ -941,11 +941,11 @@ body.light-mode .submit-btn:hover {
 
 body.light-mode .stat {
     background: #ffffff;
-    box-shadow: 0 4px 20px rgba(110, 86, 207, 0.08);
+    box-shadow: 0 4px 20px rgba(80, 86, 207, 0.08);
 }
 
 body.light-mode .stat:hover {
-    box-shadow: 0 8px 30px rgba(110, 86, 207, 0.15);
+    box-shadow: 0 8px 30px rgba(80, 86, 207, 0.15);
 }
 
 /* Theme Toggle Button */
@@ -974,7 +974,7 @@ body.light-mode .stat:hover {
 #theme-toggle-btn:hover {
   background: var(--accent-color);
   color: #ffffff;
-  box-shadow: 0 8px 20px rgba(110, 86, 207, 0.3);
+  box-shadow: 0 8px 20px rgba(80, 86, 207, 0.3);
 }
   
   /* Add subtle animations */
