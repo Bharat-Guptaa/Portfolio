@@ -9,24 +9,78 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Simple form validation
+// Enhanced form validation with text error messages
 const form = document.getElementById('contact-form');
-form.addEventListener('submit', function (e) {
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const message = form.message.value.trim();
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const messageInput = document.getElementById('message');
+const nameError = document.getElementById('name-error');
+const emailError = document.getElementById('email-error');
+const messageError = document.getElementById('message-error');
 
-    if (!name || !email || !message) {
-        alert("Please fill out all fields.");
-        e.preventDefault();
+// Clear errors when typing
+nameInput.addEventListener('input', () => {
+    nameError.textContent = '';
+    nameInput.classList.remove('error');
+});
+
+emailInput.addEventListener('input', () => {
+    emailError.textContent = '';
+    emailInput.classList.remove('error');
+});
+
+messageInput.addEventListener('input', () => {
+    messageError.textContent = '';
+    messageInput.classList.remove('error');
+});
+
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    
+    // Reset errors
+    nameError.textContent = '';
+    emailError.textContent = '';
+    messageError.textContent = '';
+    nameInput.classList.remove('error');
+    emailInput.classList.remove('error');
+    messageInput.classList.remove('error');
+    
+    let isValid = true;
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const message = messageInput.value.trim();
+
+    if (!name) {
+        nameError.textContent = "Please enter your name";
+        nameInput.classList.add('error');
+        isValid = false;
+    }
+    
+    if (!email) {
+        emailError.textContent = "Please enter your email address";
+        emailInput.classList.add('error');
+        isValid = false;
     } else if (!validateEmail(email)) {
-        alert("Please enter a valid email address.");
-        e.preventDefault();
+        emailError.textContent = "Please enter a valid email address";
+        emailInput.classList.add('error');
+        isValid = false;
+    }
+    
+    if (!message) {
+        messageError.textContent = "Please enter your message";
+        messageInput.classList.add('error');
+        isValid = false;
+    }
+    
+    if (isValid) {
+        // Would normally submit the form here
+        console.log("Form is valid and ready to submit");
+        // Uncomment to actually submit: form.submit();
     }
 });
 
 function validateEmail(email) {
-    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const pattern = /^(?![0-9])[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/;
     return pattern.test(email);
 }
 

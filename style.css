@@ -1048,3 +1048,24 @@ img.loaded {
     background: var(--accent-hover);
 }
 
+/* Form Error Styles */
+.error-message {
+  color: #ff4d4d;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  font-weight: 500;
+  height: 20px;
+  transition: all 0.3s ease;
+}
+
+.form-group input.error,
+.form-group textarea.error {
+  border: 1px solid #ff4d4d;
+  background-color: rgba(255, 77, 77, 0.05);
+}
+
+body.light-mode .form-group input.error,
+body.light-mode .form-group textarea.error {
+  background-color: rgba(255, 77, 77, 0.03);
+}
+

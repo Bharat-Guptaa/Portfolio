@@ -1,30 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bharat Gupta - Strategic IT PMO Director with 20+ years in Cloud, Security, and Infrastructure Modernization.">
-    <meta name="keywords" content="Bharat Gupta, PMO, IT Director, Cloud Security, Zero Trust, Agile, Portfolio Manager, Hyderabad, Mumbai">
-    <meta name="author" content="Bharat Gupta">
-    <meta property="og:title" content="Bharat Gupta - PMO & IT Infrastructure Leader">
-    <meta property="og:description" content="Strategic IT PMO Director with 20+ years in Cloud, Security, and Infrastructure Modernization.">
-    <meta property="og:image" content="Profile.jpg">
-    <meta property="og:url" content="https://bharatgupta.com">
-    <title>Bharat Gupta - PMO & IT Infrastructure Leader</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXX');
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bharat Gupta - Strategic IT PMO Director with 20+ years in Cloud, Security, and Infrastructure Modernization.">
+  <meta name="author" content="Bharat Gupta">
+  <meta name="theme-color" content="#0c0c0e">
+  <link rel="canonical" href="https://bharat-guptaa.github.io/Portfolio/">
+
+  <!-- Open Graph (Facebook, LinkedIn) -->
+  <meta property="og:title" content="Bharat Gupta - PMO & IT Infrastructure Leader">
+  <meta property="og:description" content="Strategic IT PMO Director with 20+ years in Cloud, Security, and Infrastructure Modernization.">
+  <meta property="og:image" content="https://bharat-guptaa.github.io/Portfolio/Profile.jpg">
+  <meta property="og:url" content="https://bharat-guptaa.github.io/Portfolio/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bharat Gupta - PMO & IT Infrastructure Leader">
+  <meta name="twitter:description" content="Strategic IT PMO Director with 20+ years in Cloud, Security, and Infrastructure Modernization.">
+  <meta name="twitter:image" content="https://bharat-guptaa.github.io/Portfolio/Profile.jpg">
+
+  <title>Bharat Gupta - PMO & IT Infrastructure Leader</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
 </head>
+
 <body>
     <div class="theme-toggle">
         <button id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
@@ -276,14 +289,17 @@
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <div class="error-message" id="name-error"></div>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <div class="error-message" id="email-error"></div>
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                    <textarea id="message" name="message" rows="5" placeholder="Enter your message..." required></textarea>
+                    <div class="error-message" id="message-error"></div>
                 </div>
                 <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
             </form>
