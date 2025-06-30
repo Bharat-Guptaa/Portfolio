@@ -6,6 +6,7 @@
   padding: 20px 0;
   padding-left: 0; /* Center alignment adjustment */
   color: var(--text-secondary);
+  width: 100%; /* Ensure full width usage */
 }
 
 /* Timeline items */
@@ -294,7 +295,9 @@
   
   /* Timeline responsive fixes */
   .timeline-item {
-    width: 95%;
+    width: 100%; /* Full width on large tablet */
+    margin-left: 0;
+    margin-right: 0;
     padding-right: 15px;
   }
   
@@ -313,7 +316,9 @@
 @media (max-width: 768px) {
   /* Continue with existing mobile styles */
   .timeline-item {
-    width: 92%;
+    width: 100%; /* Full width on tablet view */
+    margin-left: 0;
+    margin-right: 0;
   }
   
   .timeline-date {
@@ -344,11 +349,12 @@
     padding: 4px 12px;
   }
   
-  /* Timeline responsive fixes for small screens */
+  /* Timeline responsive fixes for small screens - full width */
   .timeline-item {
-    margin-left: 15px;
+    margin-left: 0;
+    margin-right: 0;
     margin-bottom: 40px;
-    width: 92%; /* Slightly wider on mobile */
+    width: 100%; /* Full width on mobile */
     padding: 15px 15px 15px 25px; /* Adjusted padding for mobile */
   }
   
@@ -413,7 +419,9 @@
 /* Extra small screens */
 @media (max-width: 400px) {
   .timeline-item {
-    width: 90%;
+    width: 100%; /* Full width on extra small screens */
+    margin-left: 0;
+    margin-right: 0;
     padding: 15px 10px 15px 22px; /* Further reduced padding */
   }
   
