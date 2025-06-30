@@ -28,6 +28,19 @@
   <link rel="stylesheet" href="timeline.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- EmailJS - Using latest version -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <!-- Defer EmailJS initialization until DOM is fully loaded -->
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      (function() {
+        // Initialize EmailJS with your public key
+        emailjs.init("vCPDNa1HL8ZSK8u81");
+        console.log("EmailJS initialized");
+      })();
+    });
+  </script>
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
@@ -377,12 +390,12 @@
             <form id="contact-form">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <input type="text" id="name" name="from_name" placeholder="Your Name" required>
                     <div class="error-message" id="name-error"></div>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <input type="email" id="email" name="from_email" placeholder="Your Email" required>
                     <div class="error-message" id="email-error"></div>
                 </div>
                 <div class="form-group">

@@ -9,6 +9,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// EmailJS is now initialized directly in the HTML to avoid loading timing issues
+// We'll just verify it's properly loaded when needed
+
 // Enhanced form validation with text error messages
 const form = document.getElementById('contact-form');
 const nameInput = document.getElementById('name');
@@ -73,9 +76,55 @@ form.addEventListener('submit', function (e) {
     }
     
     if (isValid) {
-        // Would normally submit the form here
-        console.log("Form is valid and ready to submit");
-        // Uncomment to actually submit: form.submit();
+        // Change button text and disable it while sending
+        const btn = this.querySelector('button');
+        btn.disabled = true;
+        btn.innerHTML = 'Sending...';
+        
+        try {
+            // Create template parameters matching your email template exactly
+            const templateParams = {
+                from_name: nameInput.value,
+                from_email: emailInput.value, // Changed to from_email to match your template
+                message: messageInput.value,
+                date_time: new Date().toLocaleString() // Adding date_time parameter for your template
+            };
+            
+            console.log("Attempting to send email via EmailJS");
+            console.log("Template parameters:", templateParams);
+            
+            // Send using EmailJS - passing the templateParams object instead of form
+            emailjs.send('service_y64nrus', 'template_cnqfwwi', templateParams)
+                .then(function(response) {
+                    console.log('EmailJS SUCCESS!', response.status, response.text);
+                    alert('✅ Message sent successfully!');
+                    form.reset();
+                    btn.disabled = false;
+                    btn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
+                })
+                .catch(function(error) {
+                    console.error('EmailJS error details:', error);
+                    
+                    // More informative error message based on the error type
+                    let errorMsg = '❌ Failed to send message. ';
+                    if (error.text) {
+                        errorMsg += error.text;
+                    } else if (error.status === 0) {
+                        errorMsg += 'Network error. Please check your internet connection.';
+                    } else {
+                        errorMsg += 'Please try again later or contact directly via email.';
+                    }
+                    
+                    alert(errorMsg);
+                    btn.disabled = false;
+                    btn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
+                });
+        } catch (err) {
+            console.error('Exception while sending email:', err);
+            alert('❌ Something went wrong while sending your message. Please try again later.');
+            btn.disabled = false;
+            btn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
+        }
     }
 });
 
@@ -326,3 +375,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
