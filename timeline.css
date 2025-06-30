@@ -275,13 +275,14 @@
 .timeline-item.expanded {
   width: 100%;
   transform: translateZ(0); /* Force GPU acceleration for smoother animation */
-  transition: width 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: width 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), margin 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
   box-shadow: none;
   background-color: rgba(108, 86, 250, 0.03);
   border-radius: 12px;
   padding-bottom: 15px;
   padding-right: 15px;
   border: 1px solid rgba(108, 86, 250, 0.1);
+  margin-left: 0; /* Reset any margin to ensure full width */
 }
 
 /* Timeline Responsive Styles */
@@ -351,6 +352,12 @@
     padding: 15px 15px 15px 25px; /* Adjusted padding for mobile */
   }
   
+  /* Ensure expanded items take full width on mobile */
+  .timeline-item.expanded {
+    width: 100%;
+    margin-left: 0;
+  }
+  
   .timeline-line-container {
     left: 0;
   }
@@ -408,6 +415,13 @@
   .timeline-item {
     width: 90%;
     padding: 15px 10px 15px 22px; /* Further reduced padding */
+  }
+  
+  /* Ensure expanded items take full width on very small screens */
+  .timeline-item.expanded {
+    width: 100%;
+    margin-left: 0;
+    padding-right: 10px; /* Match the side padding for expanded state */
   }
   
   .timeline-date {
