@@ -1,0 +1,451 @@
+/* Timeline Styles - Minimalist Design */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+  padding-left: 0; /* Center alignment adjustment */
+  color: var(--text-secondary);
+}
+
+/* Timeline items */
+.timeline-item {
+  position: relative;
+  width: 90%; /* Increased width from 70% to 90% */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px 10px 15px 30px; /* Combined padding */
+  border-radius: 12px;
+  box-shadow: none;
+  transition: width 0.4s ease-in-out, transform 0.4s ease-out, background-color 0.4s ease;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Line and dot container */
+.timeline-line-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  height: 100%;
+  z-index: 1; /* Ensure line appears above items */
+}
+
+/* The vertical line */
+.timeline-line {
+  position: absolute;
+  width: 3px; /* Increased from 2px to 3px */
+  background: linear-gradient(to bottom, transparent, var(--timeline-accent), var(--timeline-accent), transparent);
+  opacity: 0.5; /* Slightly increased opacity from 0.4 to 0.5 */
+  top: 0;
+  bottom: -60px;
+  left: 12px; /* Adjusted to go through the center of the dot */
+  height: calc(100% + 60px);
+}
+
+.timeline-item:last-child .timeline-line {
+  height: 30px;
+}
+
+/* The dots on the timeline */
+.timeline-dot {
+  position: absolute;
+  width: 12px; /* Increased from 8px */
+  height: 12px; /* Increased from 8px */
+  left: 7px; /* Adjusted so the line goes through the center */
+  top: 24px; /* Aligned with year text (centered vertically) */
+  background-color: var(--timeline-accent);
+  border-radius: 50%;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Container for the main timeline content */
+.timeline-content {
+  transition: all 0.4s ease-in-out;
+}
+
+/* Timeline header with date and title */
+.timeline-header {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 5px;
+  flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+/* Add subtle separator between header and content */
+.timeline-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, rgba(255,255,255,0.05), transparent);
+}
+
+/* The date on the timeline */
+.timeline-date {
+  font-weight: 700;
+  color: var(--timeline-accent);
+  font-size: 2rem; /* Increased from 1.05rem */
+  margin-right: 15px;
+  min-width: 150px; /* Increased from 120px */
+  letter-spacing: -0.2px;
+  position: relative;
+  white-space: nowrap; /* Prevent date from wrapping on desktop */
+  line-height: 2rem; /* Added to ensure vertical centering with dot */
+}
+
+/* Title section with company and role */
+.timeline-title {
+  flex: 1;
+  display: flex; /* Make it flex to place company and role side by side */
+  flex-wrap: nowrap; /* Prevent wrapping to keep on one line on desktop */
+  align-items: baseline; /* Align text baselines */
+  gap: 12px; /* Increased space between company and role */
+  overflow: visible; /* Allow content to be fully visible */
+}
+
+.timeline-title .company {
+  font-weight: 700;
+  color: var(--timeline-secondary);
+  font-size: 1.8rem; /* Slightly reduced from 2rem */
+  letter-spacing: -0.3px;
+  margin-bottom: 0; /* For desktop view */
+  white-space: nowrap; /* For desktop view */
+}
+
+.timeline-title .role {
+  font-weight: 500;
+  color: var(--text-primary);
+  font-size: 1.3rem; /* Slightly reduced from 1.5rem */
+  opacity: 0.9;
+  letter-spacing: 0.2px;
+  position: relative;
+  padding-left: 0;
+  white-space: nowrap; /* For desktop view */
+}
+
+/* Timeline highlights */
+.timeline-highlights {
+  margin-top: 15px;
+  margin-left: 0; /* Remove the margin-left that was causing excess horizontal gap */
+  margin-bottom: 10px; /* Add a smaller bottom margin to reduce excess space */
+}
+
+/* Style for the timeline highlights list */
+.timeline-highlights ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-highlights li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  position: relative;
+  padding-left: 20px; /* Space for the dash */
+}
+
+.timeline-highlights li:last-child {
+  margin-bottom: 0;
+}
+
+/* Add dash before each list item */
+.timeline-highlights li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--text-secondary);
+}
+
+.highlight {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+/* Remove margin from last highlight item to reduce spacing */
+.highlight:last-child {
+  margin-bottom: 0;
+}
+
+.highlight-tech {
+  color: var(--timeline-accent);
+  font-weight: 500;
+}
+
+/* Detailed content styling */
+.hidden-details {
+  margin-top: 15px; /* Adjusted for better transitions */
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease, width 0.5s ease, margin-top 0.5s ease;
+  width: 100%;
+}
+
+/* Show state for hidden details with animation */
+.hidden-details.show {
+  max-height: 2000px; /* Large enough to accommodate content */
+  opacity: 1;
+  margin-top: 20px; /* Add margin only when expanded */
+  width: 100%; /* Ensure it takes full width when expanded */
+  animation: fadeContentIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeContentIn {
+  from {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Experience content styling */
+.hidden-details h4 {
+  color: var(--timeline-secondary);
+  font-size: 1.05rem;
+  margin: 15px 0 10px;
+  font-weight: 600;
+}
+
+.hidden-details h4:first-child {
+  margin-top: 0;
+}
+
+.hidden-details p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+/* Toggle button for timeline details */
+.timeline-toggle {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 15px;
+  margin-left: 0;
+  margin-bottom: 0; /* Remove excess space below the button */
+}
+
+.timeline-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(108, 86, 250, 0.1);
+  border: 1px solid rgba(108, 86, 250, 0.3);
+  border-radius: 6px;
+  color: var(--timeline-secondary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.timeline-toggle-btn:hover {
+  background: rgba(108, 86, 250, 0.2);
+}
+
+.timeline-toggle-btn i {
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate icon when expanded */
+.timeline-item.expanded .timeline-toggle-btn i {
+  transform: rotate(180deg);
+}
+
+/* Expanded state styles */
+.timeline-item.expanded {
+  width: 100%;
+  transform: translateZ(0); /* Force GPU acceleration for smoother animation */
+  transition: width 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: none;
+  background-color: rgba(108, 86, 250, 0.03);
+  border-radius: 12px;
+  padding-bottom: 15px;
+  padding-right: 15px;
+  border: 1px solid rgba(108, 86, 250, 0.1);
+}
+
+/* Timeline Responsive Styles */
+@media (max-width: 1024px) {
+  /* Tablet view - start stacking elements */
+  .timeline-toggle {
+    margin-left: 0;
+  }
+  
+  /* Timeline responsive fixes */
+  .timeline-item {
+    width: 95%;
+    padding-right: 15px;
+  }
+  
+  .timeline-line-container {
+    left: 0;
+  }
+  
+  .timeline-header {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    flex-wrap: nowrap;
+    margin-bottom: 12px;
+    width: 100%; /* Ensure full width */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Continue with existing mobile styles */
+  .timeline-item {
+    width: 92%;
+  }
+  
+  .timeline-date {
+    margin-bottom: 10px;
+    font-size: 1.2rem; /* Keep it larger for emphasis */
+    width: 100%; /* Ensure full width */
+  }
+  
+  .timeline-title {
+    gap: 3px;
+    flex-direction: column; /* Stack company and role vertically */
+    width: 100%; /* Ensure full width */
+    flex-wrap: nowrap;
+  }
+  
+  .timeline-title .company {
+    font-size: 1.1rem;
+  }
+  
+  .timeline-title .role {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .timeline-toggle-btn {
+    font-size: 0.8rem;
+    padding: 4px 12px;
+  }
+  
+  /* Timeline responsive fixes for small screens */
+  .timeline-item {
+    margin-left: 15px;
+    margin-bottom: 40px;
+    width: 92%; /* Slightly wider on mobile */
+    padding: 15px 15px 15px 25px; /* Adjusted padding for mobile */
+  }
+  
+  .timeline-line-container {
+    left: 0;
+  }
+  
+  .timeline-line {
+    width: 3px; /* Consistent width with desktop */
+    left: 10px; /* Adjusted to go through center of the dot */
+  }
+  
+  .timeline-dot {
+    width: 10px; /* Slightly smaller but still larger than before */
+    height: 10px;
+    left: 6.5px; /* Adjusted for perfect centering with the line */
+    top: 16px; /* Adjusted for mobile view to align with year */
+  }
+  
+  .timeline-header {
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+  }
+  
+  .timeline-date {
+    font-size: 1rem; /* Keep it relatively large even on small screens */
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+  
+  .timeline-title .company {
+    font-size: 1rem;
+    white-space: normal; /* Allow wrapping */
+    margin-bottom: 3px; /* Add space between company and role */
+    width: 100%;
+  }
+  
+  .timeline-title .role {
+    font-size: 0.9rem;
+    white-space: normal; /* Allow wrapping */
+    width: 100%;
+  }
+  
+  /* Update the responsive styles for the list items */
+  .timeline-highlights li,
+  .highlight {
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+  }
+  
+  .timeline-highlights li {
+    padding-left: 15px; /* Smaller padding for the dash on mobile */
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 400px) {
+  .timeline-item {
+    width: 90%;
+    padding: 15px 10px 15px 22px; /* Further reduced padding */
+  }
+  
+  .timeline-date {
+    font-size: 0.95rem;
+  }
+  
+  .timeline-title .company {
+    font-size: 0.9rem;
+  }
+  
+  .timeline-title .role {
+    font-size: 0.8rem;
+  }
+  
+  .timeline-highlights li {
+    font-size: 0.8rem;
+    padding-left: 12px;
+  }
+  
+  .timeline-dot {
+    top: 14px; /* Further adjusted for extra small screens */
+  }
+}
+
+/* Light Mode Timeline Styles */
+/* Ensure timeline elements have proper styling in light mode */
+body.light-mode .timeline-dot {
+  background-color: var(--timeline-accent);
+}
+
+body.light-mode .timeline-date {
+  color: var(--timeline-accent);
+}
+
+body.light-mode .timeline-title .company {
+  color: var(--timeline-secondary);
+}
+
+body.light-mode .timeline-toggle-btn:hover {
+  background: rgba(108, 86, 250, 0.1);
+}

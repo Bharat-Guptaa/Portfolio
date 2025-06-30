@@ -1,3 +1,5 @@
+@import url('timeline.css');
+
 /* Global Styles */
 * {
     margin: 0;
@@ -16,6 +18,8 @@
     --gradient-1: #4056cf;
     --gradient-2: #6c56fa;
     --border-radius: 12px;
+    --timeline-accent: #e9518a; /* Pink accent for timeline */
+    --timeline-secondary: #6c56fa; /* Secondary color for timeline */
   }
   
   body {
@@ -310,11 +314,26 @@
   
   .stat-number {
     margin-bottom: 5px;
+    display: inline-block;
+    font-size: 2.8rem;
+    font-weight: 800;
+    background: linear-gradient(to right, var(--gradient-1), var(--gradient-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: all 0.3s ease-out;
+  }
+  
+  .stat-number:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 15px rgba(108, 86, 250, 0.4);
   }
   
   .stat-label {
     font-size: 0.9rem;
     color: var(--text-secondary);
+    display: block;
+    margin-top: 5px;
   }
   
   /* Skills Section */
@@ -768,6 +787,8 @@
     .skills-category {
       padding: 15px;
     }
+    
+    /* Timeline responsive styles moved to timeline.css */
   }
   
   @media (max-width: 600px) {
@@ -842,6 +863,8 @@
     .cert-grid {
       grid-template-columns: 1fr;
     }
+    
+    /* Timeline responsive styles moved to timeline.css */
   }
   
 /* Light Mode Styles */
@@ -977,12 +1000,12 @@ body.light-mode .stat:hover {
   box-shadow: 0 8px 20px rgba(80, 86, 207, 0.3);
 }
   
-  /* Add subtle animations */
-  @keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-  }
+/* Add subtle animations */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
 
 /* Lazy Loading Styles */
 .section-hidden {
@@ -1069,3 +1092,4 @@ body.light-mode .form-group textarea.error {
   background-color: rgba(255, 77, 77, 0.03);
 }
 
+/* Timeline styles moved to timeline.css */
