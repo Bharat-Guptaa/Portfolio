@@ -420,57 +420,76 @@
             <h2>Certification Showcase</h2>
             <p class="section-intro">Visual representation of my key professional certifications in project management, cloud, and agile methodologies.</p>
             <div class="cert-grid">
-                <div class="cert-item">
+                <div class="cert-item" data-title="AWS Cloud Practitioner" data-description="Amazon Web Services Certified Cloud Practitioner">
                     <div class="cert-overlay">
                         <div class="cert-details">
-                            <h4>Project Management Professional</h4>
-                            <p>PMI Certified</p>
+                            <h4>AWS Cloud Practitioner</h4>
+                            <p>AWS Certified</p>
                         </div>
                     </div>
-                    <img src="certificates/pmp.png" alt="PMP Certificate" loading="lazy">
-                    <span class="cert-name">PMP</span>
+                    <img src="Assets/Certificates/Professional/AWS_Certified_Cloud_Practitioner_Certificate.jpg" alt="AWS Cloud Practitioner Certificate" loading="lazy">
+                    <span class="cert-name">AWS Cloud</span>
                 </div>
-                <div class="cert-item">
+                <div class="cert-item" data-title="Financial Management of Projects" data-description="KPMG Professional Certification in Financial Project Management">
                     <div class="cert-overlay">
                         <div class="cert-details">
-                            <h4>AWS Solutions Architect</h4>
-                            <p>Associate Level</p>
+                            <h4>Financial Management of Projects</h4>
+                            <p>KPMG Certified</p>
                         </div>
                     </div>
-                    <img src="certificates/aws-sa.png" alt="AWS Solutions Architect" loading="lazy">
-                    <span class="cert-name">AWS SA</span>
+                    <img src="Assets/Certificates/Professional/Financial_Management_of_Projects-KPMG.jpg" alt="Financial Management of Projects" loading="lazy">
+                    <span class="cert-name">KPMG Finance</span>
                 </div>
-                <div class="cert-item">
-                    <div class="cert-overlay">
-                        <div class="cert-details">
-                            <h4>SAFe Agilist</h4>
-                            <p>Scaled Agile Framework</p>
-                        </div>
-                    </div>
-                    <img src="certificates/safe.png" alt="SAFe Agilist" loading="lazy">
-                    <span class="cert-name">SAFe</span>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-overlay">
-                        <div class="cert-details">
-                            <h4>Certified Scrum Master</h4>
-                            <p>Scrum Alliance</p>
-                        </div>
-                    </div>
-                    <img src="certificates/csm.png" alt="Certified Scrum Master" loading="lazy">
-                    <span class="cert-name">CSM</span>
-                </div>
-                <div class="cert-item">
+                <div class="cert-item" data-title="ITIL Foundation" data-description="ITIL V4 Foundation - IT Service Management Framework">
                     <div class="cert-overlay">
                         <div class="cert-details">
                             <h4>ITIL Foundation</h4>
                             <p>V4 Certification</p>
                         </div>
                     </div>
-                    <img src="certificates/itil.png" alt="ITIL" loading="lazy">
-                    <span class="cert-name">ITIL</span>
+                    <img src="Assets/Certificates/Professional/ITIL_V4.jpg" alt="ITIL V4" loading="lazy">
+                    <span class="cert-name">ITIL V4</span>
                 </div>
-                <!-- Add more as needed -->
+                <div class="cert-item" data-title="Product Management" data-description="Professional Certificate in Product Management Methodologies">
+                    <div class="cert-overlay">
+                        <div class="cert-details">
+                            <h4>Product Management</h4>
+                            <p>Professional Certificate</p>
+                        </div>
+                    </div>
+                    <img src="Assets/Certificates/Professional/Product_Management_Certificate.jpg" alt="Product Management Certificate" loading="lazy">
+                    <span class="cert-name">Product Mgmt</span>
+                </div>
+                <div class="cert-item" data-title="SAFe 6 Agilist" data-description="Scaled Agile Framework 6.0 - Leading SAFe Certification">
+                    <div class="cert-overlay">
+                        <div class="cert-details">
+                            <h4>SAFe 6 Agilist</h4>
+                            <p>Scaled Agile Framework</p>
+                        </div>
+                    </div>
+                    <img src="Assets/Certificates/Professional/Safe_6_Agilist.jpg" alt="SAFe 6 Agilist" loading="lazy">
+                    <span class="cert-name">SAFe 6</span>
+                </div>
+                <div class="cert-item" data-title="SAFe 5 Agilist" data-description="Scaled Agile Framework 5.0 - Leading SAFe Certification">
+                    <div class="cert-overlay">
+                        <div class="cert-details">
+                            <h4>SAFe 5 Agilist</h4>
+                            <p>Scaled Agile Framework</p>
+                        </div>
+                    </div>
+                    <img src="Assets/Certificates/Professional/Safe_5_Agilist.jpg" alt="SAFe 5 Agilist" loading="lazy">
+                    <span class="cert-name">SAFe 5</span>
+                </div>
+                <div class="cert-item" data-title="SAFe Lean Portfolio Management" data-description="SAFe LPM - Enterprise Portfolio Strategy and Investment Funding">
+                    <div class="cert-overlay">
+                        <div class="cert-details">
+                            <h4>SAFe Lean Portfolio Management</h4>
+                            <p>LPM Certification</p>
+                        </div>
+                    </div>
+                    <img src="Assets/Certificates/Professional/Safe_LPM.jpg" alt="SAFe LPM" loading="lazy">
+                    <span class="cert-name">SAFe LPM</span>
+                </div>
             </div>
         </div>
     </section>
@@ -512,6 +531,17 @@
         </div>
     </footer>
 
+    <!-- Certificate Modal -->
+    <div id="certificate-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img id="modal-certificate-img" src="" alt="Certificate">
+            <div class="modal-caption">
+                <h3 id="modal-certificate-title"></h3>
+                <p id="modal-certificate-description"></p>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 

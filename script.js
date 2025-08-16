@@ -376,3 +376,72 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Certificate Modal Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the modal and its components
+    const modal = document.getElementById('certificate-modal');
+    const modalImg = document.getElementById('modal-certificate-img');
+    const modalTitle = document.getElementById('modal-certificate-title');
+    const modalDescription = document.getElementById('modal-certificate-description');
+    const closeModal = document.querySelector('.close-modal');
+    
+    // Get all certificate items
+    const certItems = document.querySelectorAll('.cert-item');
+    
+    // Function to open the modal
+    function openModal(imgSrc, title, description) {
+        // Set the modal content
+        modalImg.src = imgSrc;
+        modalTitle.textContent = title;
+        modalDescription.textContent = description;
+        
+        // Display the modal with animation
+        modal.style.display = 'block';
+        setTimeout(() => {
+            modal.classList.add('show');
+        }, 10);
+        
+        // Disable body scroll when modal is open
+        document.body.style.overflow = 'hidden';
+    }
+    
+    // Function to close the modal
+    function closeModalFunc() {
+        modal.classList.remove('show');
+        
+        // Wait for animation to complete before hiding
+        setTimeout(() => {
+            modal.style.display = 'none';
+            // Re-enable body scroll
+            document.body.style.overflow = 'auto';
+        }, 300);
+    }
+    
+    // Add click event to all certificate items
+    certItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const imgSrc = this.querySelector('img').src;
+            const title = this.getAttribute('data-title');
+            const description = this.getAttribute('data-description');
+            openModal(imgSrc, title, description);
+        });
+    });
+    
+    // Close the modal when clicking the close button
+    closeModal.addEventListener('click', closeModalFunc);
+    
+    // Close the modal when clicking outside the image
+    modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            closeModalFunc();
+        }
+    });
+    
+    // Close the modal with escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && modal.classList.contains('show')) {
+            closeModalFunc();
+        }
+    });
+});
+
