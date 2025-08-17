@@ -584,10 +584,13 @@
   
   #certificates .section-intro {
     color: var(--text-secondary);
-    max-width: 800px;
-    margin: 0 auto 40px;
-    text-align: center;
-    font-size: 1.1rem;
+    width: 100%;
+    margin: 0 0 40px;
+    text-align: left;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   .cert-grid {
@@ -724,10 +727,15 @@
   }
   
   .contact-intro {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto 40px;
+    text-align: left;
+    width: 100%;
+    margin: 0 0 40px;
     color: var(--text-secondary);
+    line-height: 1.5;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   .form-group {
