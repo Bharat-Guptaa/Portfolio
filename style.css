@@ -18,7 +18,7 @@
     --gradient-1: #4056cf;
     --gradient-2: #6c56fa;
     --border-radius: 12px;
-    --section-padding: 60px;
+    --section-padding: 30px;
     --timeline-accent: #e9518a; /* Pink accent for timeline */
     --timeline-secondary: #6c56fa; /* Secondary color for timeline */
   }
@@ -40,7 +40,7 @@
   }
   
   section {
-    padding: var(--section-padding) 0 0 0;
+    padding: var(--section-padding) 0 30px 0;
     position: relative;
     margin: 0;
   }
@@ -67,6 +67,7 @@
     align-items: center;
     text-align: center;
     padding: 0;
+    margin-bottom: 0;
     position: relative;
     overflow: hidden;
   }
@@ -142,82 +143,6 @@
     margin-right: auto;
   }
   
-  .hero-cta {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    animation: fadeIn 2s ease-out;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .cta-button {
-    padding: 15px 30px;
-    border-radius: 30px;
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.2, 0, 0.1, 1);
-    display: inline-block;
-    box-shadow: 0 4px 15px rgba(80, 86, 207, 0.2);
-    will-change: transform, box-shadow;
-    text-align: center;
-    min-width: 160px;
-  }
-  
-  .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(80, 86, 207, 0.3);
-  }
-  
-  .cta-button.primary, .cta-button:first-child {
-    background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2));
-    color: white;
-    box-shadow: 0 5px 15px rgba(80, 86, 207, 0.4);
-  }
-  
-  .cta-button.primary:hover, .cta-button:first-child:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(80, 86, 207, 0.6);
-  }
-  
-  .cta-button.secondary {
-    background: transparent;
-    color: var(--text-primary);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-  
-  .cta-button.secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.3);
-    transform: translateY(-3px);
-  }
-  
-  .cta-button.download {
-    background: linear-gradient(90deg, #3468b0, #4181d3);
-    color: white;
-    box-shadow: 0 5px 15px rgba(52, 104, 176, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    text-align: center;
-  }
-  
-  .cta-button.download:hover {
-    background: linear-gradient(90deg, #3c74c2, #4d8be8);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(52, 104, 176, 0.6);
-  }
-  
-  .cta-button.download i {
-    font-size: 0.9rem;
-  }
-  
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -226,7 +151,8 @@
   /* Executive Summary Section */
   #about {
     border-radius: var(--border-radius);
-    padding: 40px;
+    padding: 0;
+    margin-top: -30px;
     position: relative;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   }
@@ -364,7 +290,8 @@
   /* Skills Section */
   #skills {
     border-radius: var(--border-radius);
-    padding: 60px 0;
+    padding: 60px 0 30px 0;
+    margin-top: 30px;
   }
   
   .skills-category {
@@ -436,7 +363,7 @@
   /* Projects Section */
   #projects {
     border-radius: var(--border-radius);
-    padding: 60px 0;
+    padding: 30px;
   }
   
   .projects-grid {
@@ -767,72 +694,7 @@
     margin-top: 50px;
   }
   
-  /* Contact Section */
-  #contact {
-    border-radius: var(--border-radius);
-    padding: 60px 0;
-    position: relative;
-  }
-  
-  .contact-intro {
-    text-align: left;
-    width: 100%;
-    margin: 0 0 40px;
-    color: var(--text-secondary);
-    line-height: 1.5;
-    font-size: 1rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
-  .form-group {
-    margin-bottom: 25px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: var(--text-primary);
-  }
-  
-  .form-group input,
-  .form-group textarea {
-    width: 100%;
-    padding: 15px;
-    background-color: var(--card-bg);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--border-radius);
-    color: var(--text-primary);
-    font-size: 1rem;
-    transition: all 0.3s ease;
-  }
-  
-  .form-group input:focus,
-  .form-group textarea:focus {
-    outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(110, 86, 207, 0.2);
-  }
-  
-  .submit-btn {
-    background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2));
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 30px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(80, 86, 207, 0.3);
-  }
-  
-  .submit-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(80, 86, 207, 0.5);
-  }
+
   
   .social-links {
     display: flex;
@@ -915,13 +777,7 @@
     }
   
     section {
-      padding: calc(var(--section-padding) * 0.67) 0 0 0;
-    }
-  
-    .hero-cta {
-      opacity: 1 !important;
-      transform: none !important;
-      justify-content: center;
+      padding: calc(var(--section-padding) * 0.5) 0 20px 0;
     }
     
     .about-stats {
@@ -980,10 +836,6 @@
     
     .hero-subtitle {
       font-size: 0.9rem;
-    }
-    
-    .cta-button {
-      min-width: 140px;
     }
     
     h2 {
@@ -1069,36 +921,6 @@ body.light-mode {
     --shadow-lg: rgba(17, 12, 46, 0.15) 0px 15px 40px;
 }
 
-/* Enhanced button styles for light mode */
-body.light-mode .cta-button {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 20px rgba(80, 86, 207, 0.1);
-}
-
-body.light-mode .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(80, 86, 207, 0.2);
-}
-
-body.light-mode .cta-button.primary, body.light-mode .cta-button:first-child {
-    box-shadow: 0 4px 15px var(--button-shadow);
-}
-
-body.light-mode .cta-button.primary:hover, body.light-mode .cta-button:first-child:hover {
-    box-shadow: 0 8px 25px var(--button-shadow);
-}
-
-body.light-mode .cta-button.secondary {
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color);
-    background: transparent;
-}
-
-body.light-mode .cta-button.secondary:hover {
-    background: rgba(80, 86, 207, 0.05);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
-}
 
 /* Enhanced styling for light mode */
 body.light-mode section {
@@ -1111,31 +933,6 @@ body.light-mode #hero {
     background: var(--darker-bg); /* Consistent background */
 }
 
-/* Enhanced form controls for light mode */
-body.light-mode .form-group input,
-body.light-mode .form-group textarea {
-    background: #ffffff;
-    border: 1px solid rgba(80, 86, 207, 0.1);
-    box-shadow: var(--shadow-sm);
-    transition: all 0.3s ease;
-}
-
-body.light-mode .form-group input:focus,
-body.light-mode .form-group textarea:focus {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(80, 86, 207, 0.1);
-}
-
-/* Enhanced submit button for light mode */
-body.light-mode .submit-btn {
-    box-shadow: 0 4px 15px var(--button-shadow);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-body.light-mode .submit-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px var(--button-shadow);
-}
 
 /* Card styling in light mode */
 body.light-mode .card-bg,
@@ -1258,26 +1055,6 @@ img.loaded {
     background: var(--accent-hover);
 }
 
-/* Form Error Styles */
-.error-message {
-  color: #ff4d4d;
-  font-size: 0.85rem;
-  margin-top: 5px;
-  font-weight: 500;
-  height: 20px;
-  transition: all 0.3s ease;
-}
-
-.form-group input.error,
-.form-group textarea.error {
-  border: 1px solid #ff4d4d;
-  background-color: rgba(255, 77, 77, 0.05);
-}
-
-body.light-mode .form-group input.error,
-body.light-mode .form-group textarea.error {
-  background-color: rgba(255, 77, 77, 0.03);
-}
 
 /* Certificate Modal Styles */
 .modal {

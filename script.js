@@ -9,130 +9,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// EmailJS is now initialized directly in the HTML to avoid loading timing issues
-// We'll just verify it's properly loaded when needed
-
-// Enhanced form validation with text error messages
-const form = document.getElementById('contact-form');
-const nameInput = document.getElementById('name');
-const emailInput = document.getElementById('email');
-const messageInput = document.getElementById('message');
-const nameError = document.getElementById('name-error');
-const emailError = document.getElementById('email-error');
-const messageError = document.getElementById('message-error');
-
-// Clear errors when typing
-nameInput.addEventListener('input', () => {
-    nameError.textContent = '';
-    nameInput.classList.remove('error');
-});
-
-emailInput.addEventListener('input', () => {
-    emailError.textContent = '';
-    emailInput.classList.remove('error');
-});
-
-messageInput.addEventListener('input', () => {
-    messageError.textContent = '';
-    messageInput.classList.remove('error');
-});
-
-form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    
-    // Reset errors
-    nameError.textContent = '';
-    emailError.textContent = '';
-    messageError.textContent = '';
-    nameInput.classList.remove('error');
-    emailInput.classList.remove('error');
-    messageInput.classList.remove('error');
-    
-    let isValid = true;
-    const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
-    const message = messageInput.value.trim();
-
-    if (!name) {
-        nameError.textContent = "Please enter your name";
-        nameInput.classList.add('error');
-        isValid = false;
-    }
-    
-    if (!email) {
-        emailError.textContent = "Please enter your email address";
-        emailInput.classList.add('error');
-        isValid = false;
-    } else if (!validateEmail(email)) {
-        emailError.textContent = "Please enter a valid email address";
-        emailInput.classList.add('error');
-        isValid = false;
-    }
-    
-    if (!message) {
-        messageError.textContent = "Please enter your message";
-        messageInput.classList.add('error');
-        isValid = false;
-    }
-    
-    if (isValid) {
-        // Change button text and disable it while sending
-        const btn = this.querySelector('button');
-        btn.disabled = true;
-        btn.innerHTML = 'Sending...';
-        
-        try {
-            // Create template parameters matching your email template exactly
-            const templateParams = {
-                from_name: nameInput.value,
-                from_email: emailInput.value, // Changed to from_email to match your template
-                message: messageInput.value,
-                date_time: new Date().toLocaleString() // Adding date_time parameter for your template
-            };
-            
-            console.log("Attempting to send email via EmailJS");
-            console.log("Template parameters:", templateParams);
-            
-            // Send using EmailJS - passing the templateParams object instead of form
-            emailjs.send('service_y64nrus', 'template_cnqfwwi', templateParams)
-                .then(function(response) {
-                    console.log('EmailJS SUCCESS!', response.status, response.text);
-                    alert('✅ Message sent successfully!');
-                    form.reset();
-                    btn.disabled = false;
-                    btn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
-                })
-                .catch(function(error) {
-                    console.error('EmailJS error details:', error);
-                    
-                    // More informative error message based on the error type
-                    let errorMsg = '❌ Failed to send message. ';
-                    if (error.text) {
-                        errorMsg += error.text;
-                    } else if (error.status === 0) {
-                        errorMsg += 'Network error. Please check your internet connection.';
-                    } else {
-                        errorMsg += 'Please try again later or contact directly via email.';
-                    }
-                    
-                    alert(errorMsg);
-                    btn.disabled = false;
-                    btn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
-                });
-        } catch (err) {
-            console.error('Exception while sending email:', err);
-            alert('❌ Something went wrong while sending your message. Please try again later.');
-            btn.disabled = false;
-            btn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
-        }
-    }
-});
-
-function validateEmail(email) {
-    const pattern = /^(?![0-9])[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/;
-    return pattern.test(email);
-}
-
 // Scroll reveal animations
 const revealElements = document.querySelectorAll('section');
 
@@ -243,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Add a scroll to top button
-const scrollToTopBtn = document.createElement('button');    
+const scrollToTopBtn = document.createElement('button');
 scrollToTopBtn.className = 'scroll-to-top';
 scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
 document.body.appendChild(scrollToTopBtn);
@@ -340,8 +216,6 @@ async function animateStats() {
         });
     });
 }
-
-// Timeline Toggle Functionality - Consolidated with the functionality below
 
 // Timeline toggle functionality
 document.addEventListener('DOMContentLoaded', function() {
