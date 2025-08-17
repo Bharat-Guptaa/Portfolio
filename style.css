@@ -174,13 +174,13 @@
     box-shadow: 0 8px 25px rgba(80, 86, 207, 0.3);
   }
   
-  .cta-button:first-child {
+  .cta-button.primary, .cta-button:first-child {
     background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2));
     color: white;
     box-shadow: 0 5px 15px rgba(80, 86, 207, 0.4);
   }
   
-  .cta-button:first-child:hover {
+  .cta-button.primary:hover, .cta-button:first-child:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(80, 86, 207, 0.6);
   }
@@ -364,7 +364,7 @@
   /* Skills Section */
   #skills {
     border-radius: var(--border-radius);
-    padding: 60px 40px;
+    padding: 60px 0;
   }
   
   .skills-category {
@@ -436,26 +436,28 @@
   /* Projects Section */
   #projects {
     border-radius: var(--border-radius);
-    padding: 60px 40px;
+    padding: 60px 0;
   }
   
   .projects-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
     margin-top: 50px;
   }
   
   .project-card {
-    flex: 1 1 350px;
     background-color: var(--card-bg);
     border-radius: var(--border-radius);
-    padding: 30px;
+    padding: 25px;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
   
   .project-card::before {
@@ -482,39 +484,44 @@
   
   .project-card h3 {
     color: var(--text-primary);
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
   }
   
   .project-card p {
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: 1.6;
+    margin-bottom: 0;
+    flex-grow: 1;
+    font-size: 0.95rem;
   }
   
   .project-tag {
     display: inline-block;
     background: rgba(80, 86, 207, 0.1);
     color: var(--accent-color);
-    padding: 5px 15px;
+    padding: 4px 12px;
     border-radius: 20px;
-    font-size: 0.8rem;
-    margin-bottom: 15px;
+    font-size: 0.75rem;
+    margin-bottom: 12px;
     border: 1px solid rgba(80, 86, 207, 0.2);
   }
   
   .project-tech {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin: 20px 0;
+    gap: 8px;
+    margin: 15px 0 0;
+    margin-top: auto;
+    padding-top: 15px;
   }
   
   .project-tech span {
     background: rgba(255, 255, 255, 0.05);
     color: var(--text-secondary);
-    padding: 5px 12px;
-    border-radius: 15px;
-    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
   }
   
   .project-link {
@@ -543,7 +550,7 @@
   
   /* Experience Section */
   #experience {
-    padding: 60px 40px;
+    padding: 60px 0;
     border-radius: var(--border-radius);
   }
   
@@ -618,7 +625,7 @@
 
   /* Certificates Section */
   #certificates {
-    padding: 60px 40px;
+    padding: 60px 0;
     border-radius: var(--border-radius);
     position: relative;
   }
@@ -763,7 +770,7 @@
   /* Contact Section */
   #contact {
     border-radius: var(--border-radius);
-    padding: 60px 40px;
+    padding: 60px 0;
     position: relative;
   }
   
@@ -864,9 +871,16 @@
   }
   
   /* Media Queries */
+  @media (max-width: 1024px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+  }
+  
   @media (max-width: 768px) {
     .projects-grid {
-      flex-direction: column;
+      grid-template-columns: 1fr;
     }
     
     .cert-grid {
@@ -1003,6 +1017,11 @@
     
     .project-card {
       padding: 20px;
+      height: auto;
+    }
+    
+    .project-card h3 {
+      font-size: 1.2rem;
     }
     
     .contact-details p {
@@ -1061,11 +1080,11 @@ body.light-mode .cta-button:hover {
     box-shadow: 0 8px 30px rgba(80, 86, 207, 0.2);
 }
 
-body.light-mode .cta-button:first-child {
+body.light-mode .cta-button.primary, body.light-mode .cta-button:first-child {
     box-shadow: 0 4px 15px var(--button-shadow);
 }
 
-body.light-mode .cta-button:first-child:hover {
+body.light-mode .cta-button.primary:hover, body.light-mode .cta-button:first-child:hover {
     box-shadow: 0 8px 25px var(--button-shadow);
 }
 
