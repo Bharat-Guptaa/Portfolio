@@ -241,6 +241,7 @@
     margin-bottom: 20px;
   }
   
+  /* Contact details styling */
   .contact-details {
     margin: 30px 0;
   }
@@ -249,43 +250,67 @@
     margin-bottom: 10px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    color: var(--text-secondary);
   }
   
   .contact-details i {
+    margin-right: 12px;
     color: var(--accent-color);
-    width: 20px;
+    min-width: 20px;
     text-align: center;
   }
   
   .contact-details a {
-    color: var(--accent-color);
+    color: var(--text-secondary);
     text-decoration: none;
-    transition: all 0.3s ease;
     position: relative;
-    padding-bottom: 2px;
+    transition: color 0.3s;
+    overflow: hidden;
+    background-image: linear-gradient(90deg, var(--gradient-1), var(--gradient-2));
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
   }
   
   .contact-details a:hover {
-    color: var(--accent-hover);
+    color: var(--text-primary);
   }
   
   .contact-details a::after {
     content: '';
     position: absolute;
-    width: 0;
-    height: 1px;
     bottom: 0;
     left: 0;
-    background-color: var(--accent-hover);
-    transition: width 0.3s ease;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
   }
   
   .contact-details a:hover::after {
-    width: 100%;
+    transform: scaleX(1);
   }
   
-  .about-stats {
+  /* Hero contact details specific styling */
+  .hero-contact {
+    margin: 15px 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .hero-contact p {
+    margin: 0 10px;
+    font-size: 1.15rem;
+    white-space: nowrap;
+  }
+  
+  .hero-contact i {
+    font-size: 1.15rem;
+  }  .about-stats {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -367,12 +392,28 @@
     line-height: 1.7;
   }
   
+  .expertise-category {
+    font-size: 1.4rem;
+    color: var(--accent-color);
+    margin: 35px 0 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(80, 86, 207, 0.2);
+    padding-bottom: 10px;
+  }
+  
+  .expertise-category i {
+    font-size: 1.5rem;
+    margin-right: 12px;
+    color: var(--gradient-2);
+  }
+  
   .skills-list {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    margin-top: 40px;
+    margin-top: 20px;
   }
   
   .skills-list li {
@@ -844,6 +885,16 @@
       font-size: 1rem;
     }
     
+    .hero-contact {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .hero-contact p {
+      margin: 0;
+    }
+    
     .profile-image {
       width: 150px;
       height: 150px;
@@ -905,6 +956,14 @@
       font-size: 1.3rem;
     }
     
+    .hero-contact p {
+      font-size: 1rem;
+    }
+    
+    .hero-contact i {
+      font-size: 1rem;
+    }
+    
     .hero-subtitle {
       font-size: 0.9rem;
     }
@@ -922,6 +981,16 @@
       height: 120px;
     }
     
+    .expertise-category {
+      font-size: 1.2rem;
+      margin: 25px 0 12px;
+    }
+    
+    .expertise-category i {
+      font-size: 1.3rem;
+      margin-right: 10px;
+    }
+    
     .skills-list {
       gap: 12px;
     }
@@ -929,6 +998,7 @@
     .skills-list li {
       padding: 10px 20px;
       font-size: 0.9rem;
+      flex-basis: 100%;
     }
     
     .project-card {
