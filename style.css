@@ -911,6 +911,88 @@ img.loaded {
 
 /* Timeline styles moved to timeline.css */
 
+/* Contact Section Styles */
+#contact {
+  padding: 60px 0;
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.contact-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-primary);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.contact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+  background: rgba(80, 86, 207, 0.1);
+}
+
+.contact-card-icon {
+  background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2));
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover .contact-card-icon {
+  transform: scale(1.1);
+}
+
+.contact-card-icon i {
+  color: white;
+  font-size: 2rem;
+}
+
+.contact-card-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, var(--gradient-1), var(--gradient-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.contact-card-content p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* Media queries for contact cards */
+@media (max-width: 1024px) {
+  .contact-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 /* Credentials Section Styles */
 .credentials-container {
   margin-top: 50px;
